@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>View Ledger</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../css/bootstrap.css">
+    <link rel="stylesheet" href="../../css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="../../css/bootstrap-datepicker.min.css">
+    <link rel="stylesheet" href="../../css/fa/all.min.css">
+
+    <style>
+        .vou_id_link {
+            text-align: center;
+        }
+
+        .vou_del_link {
+            text-align: center;
+            color: crimson;
+
+        }
+
+        .vou_edit_link {
+            text-align: center;
+            color: green
+        }
+
+        .vou_q_view_link {
+            text-align: center;
+            color: darkblue;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <div class="card-header">
+
+        <h6>Select Ledger</h6>
+    </div>
+    <br> -->
+
+    <div class="container col-md-12">
+
+        <div class="form-row">
+
+
+            <div class="form-group col-md-6">
+                <label for="coupon">Ledger</label>
+                <!-- should behave like the other non-inlined form fields -->
+                <div class="input-group">
+                    <input type="text" class="form-control" id="led_name" placeholder="Ledger ID" readonly />
+                    <span class="input-group-btn">
+                        <button class="btn btn-primary" id="choose_ledger" type=" button">
+                            <i class="fas fa-search"></i> &nbsp;Choose</button>
+                    </span>
+                </div>
+            </div>
+            <div class="form-group col-md-2">
+                <label for="coupon">From</label>
+                <div class="input-group">
+                    <span class="input-group-btn">
+                        <button class="btn btn-primary" type=" button">
+                            <i class="fas fa-calendar"></i></button>
+                    </span>
+                    <input data-provide="datepicker" id="date_from" class="form-control" placeholder="Voucher Date">
+
+                </div>
+            </div>
+            <div class="form-group col-md-2">
+                <label for="coupon">To</label>
+                <div class="input-group">
+                    <span class="input-group-btn">
+                        <button class="btn btn-primary" type=" button">
+                            <i class="fas fa-calendar"></i></button>
+                    </span>
+                    <input data-provide="datepicker" id="date_to" class="form-control" placeholder="Voucher Date">
+
+                </div>
+            </div>
+            <div class="form-group col-md-2">
+                <label for="coupon">&nbsp;</label>
+                <div class="input-group">
+                    <span class="input-group-btn">
+                        <button class="btn btn-primary" id="show_ledger" type=" button">
+                            <i class="fas fa-calendar"></i> &nbsp;Show Ledger</button>
+                    </span>
+                    <!-- <input data-provide="datepicker" class="form-control" placeholder="Voucher Date"> -->
+
+                </div>
+            </div>
+
+            <div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog"
+                aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-scrollable" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="QViewHeader"></h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <table id="entry_table" class="display compact" style="width:100%">
+
+                                <thead>
+                                    <tr>
+                                        <th>Ledger Name</th>
+                                        <th>Dr/Cr</th>
+                                        <th>Amount</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+
+                            <p id="QViewFooter"></p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+        <!-- <div class="container col-md-12"> -->
+
+        <table id="vou_list_table" class="display compact hover" style="width:100%">
+            <thead>
+                <tr>
+                    <th>No.</th>
+                    <th>Date</th>
+                    <th>Description</th>
+                    <th>Dr/Cr</th>
+                    <th>Amount</th>
+                    <th>Actions</th>
+            </thead>
+            <tbody></tbody>
+
+        </table>
+        <!-- </div> -->
+    </div>
+
+    <script>
+        // You can also require other files to run in this process
+        require('../../../renderer.js')
+    </script>
+
+
+    <script>
+        if (typeof module === 'object') {
+            window.module = module;
+            module = undefined;
+        }
+    </script>
+    <script src="../../js/popper.min.js"></script>
+    <script src="../../js/jquery.min.js"></script>
+    <script src="../../js/jquery.dataTables.min.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
+    <script src="../../js/bootstrap-datepicker.min.js"></script>
+    <script src="../../js/fa/all.min.js"></script>
+    <script src="../../js/moment.min.js"></script>
+    <script src="view_ledger.js"></script>
+
+    <script>
+        if (window.module) module = window.module;
+    </script>
+</body>
+
+</html>

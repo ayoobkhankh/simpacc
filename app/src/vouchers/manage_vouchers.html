@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Manage Vouchers</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../css/bootstrap.css">
+    <link rel="stylesheet" href="../../css/select2.css">
+    <link rel="stylesheet" href="../../css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="../../css/bootstrap-datepicker.min.css">
+    <link rel="stylesheet" href="../../css/fa/all.min.css">
+    <style>
+        .edit_line_link {
+            text-align: center;
+            color: darkblue;
+        }
+
+        .del_line_link {
+            text-align: center;
+            color: crimson;
+        }
+
+        .equal_sign_match {
+            text-align: center;
+            color: limegreen;
+            font-size: 35px;
+            padding: 10px;
+        }
+
+        .equal_sign_unmatch {
+            text-align: center;
+            color: tomato;
+            font-size: 35px;
+            padding: 10px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- <div class="card-header">
+
+        <h6>Manage Vouchers</h6>
+        <h6 class="card-title">Manage Ledgers</h6>
+    </div> -->
+
+    <h6 class="card-header">Manage Vouchers <a href="#" data-toggle="popover" data-trigger="focus" title="Popover title"
+            data-content="And here's some amazing content. It's very engaging. Right?">
+            <i class="fas fa-question-circle fa-xs"></i> </a>
+    </h6>
+
+    <div class="container col-md-12">
+
+
+
+        <!-- <div class="card-body"> -->
+        <br>
+
+
+
+        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+            <label class="btn btn-primary active">
+                <input type="radio" id="create_new_radio" checked>
+                <i class="fas fa-plus-circle"></i> &nbsp;
+                Create New </label> <label class="btn btn-primary">
+                <input type="radio" id="edit_radio">
+                <i class="fas fa-edit"></i> &nbsp;
+                Edit Existing
+            </label>
+        </div>
+
+        <br> <br>
+
+
+        <div class="form-row">
+            <div class="form-group col-md-2">
+                <label for="coupon">Voucher No</label>
+                <!-- should behave like the other non-inlined form fields -->
+                <div class="input-group">
+                    <span class="input-group-btn">
+                        <button class="btn btn-primary" disabled type=" button">
+                            <i class="fas fa-database"></i></button>
+                    </span>
+                    <input type="text" class="form-control" id="vou_no" placeholder="Voucher No" readonly />
+
+                </div>
+
+            </div>
+            <div class="form-group col-md-2">
+                <label for="coupon">Voucher Date</label>
+                <div class="input-group">
+                    <span class="input-group-btn">
+                        <button class="btn btn-primary" disabled type=" button">
+                            <i class="fas fa-calendar"></i></button>
+                    </span>
+                    <input data-provide="datepicker" id="vou_date" class="form-control" placeholder="Voucher Date">
+
+                </div>
+            </div>
+            <div class="form-group col-md-3"></div>
+            <div class="form-group col-md-2">
+                <label for="coupon">Debit Total</label>
+                <div class="input-group">
+                    <span class="input-group-btn">
+                        <button class="btn btn-success" disabled type=" button">
+                            Dr.
+                            <!-- <i class="fas fa-calendar"></i> -->
+                        </button>
+                    </span>
+                    <input id="debit_total" class="form-control" disabled placeholder="Debit Total">
+
+                </div>
+            </div>
+
+            <div id="eq_check"></div>
+
+            <div class="form-group col-md-2">
+                <label for="coupon">Credit Total</label>
+                <div class="input-group">
+                    <span class="input-group-btn">
+                        <button class="btn btn-danger" disabled type=" button">
+                            Cr.
+                            <!-- <i class="fas fa-calendar"></i> -->
+                        </button>
+                    </span>
+                    <input id="credit_total" class="form-control" disabled placeholder="Credit Total">
+
+                </div>
+            </div>
+        </div>
+        <!-- <form class="form-inline">
+                <div class="form-group mb-2">
+                    <input type="text" class="form-control" id="ledid" placeholder="Voucher No" readonly>
+                </div>
+                <div class="form-group mx-sm-3 mb-2">
+                    <input data-provide="datepicker" class="form-control" placeholder="Voucher Date">
+                </div>
+            </form> -->
+
+        <!-- <hr /> -->
+
+        <!-- <h6 class="text-uppercase">Details</h6> -->
+        <!-- <hr /> -->
+        <div class="form-row">
+
+
+            <div class="form-group col-md-6">
+                <label for="coupon">Ledger</label>
+                <!-- should behave like the other non-inlined form fields -->
+                <div class="input-group">
+                    <input type="text" class="form-control" id="led_name" placeholder="Choose Ledger" readonly />
+                    <span class="input-group-btn">
+                        <button class="btn btn-primary" id="choose_ledger" type=" button">
+                            <i class="fas fa-search"></i> &nbsp; Choose</button>
+                    </span>
+                </div>
+            </div>
+            <!-- <div class="form-group col-md-3">
+                    <label for="ledid">Ledger</label>
+                    <input type="text" class="form-control input" id="led_name" placeholder="Ledger ID" readonly>
+                </div>
+                <div class="form-group col-md-1">
+                    <button class="btn btn-success btn-space btn-top-mrg" id="choose_ledger"
+                        type="button">Choose</button>
+
+                </div> -->
+            <div class="form-group col-md-3">
+                <label for="led_name">Dr/Cr</label>
+                <select class="form-control" id="led_treat">
+                    <option value="Dr">Dr</option>
+                    <option value="Cr">Cr</option>
+
+                </select>
+            </div>
+
+            <div class="form-group col-md-3">
+                <label for="coupon">Amount</label>
+                <!-- should behave like the other non-inlined form fields -->
+                <div class="input-group">
+                    <input type="number" class="form-control" id="vou_amt" placeholder="Amount" />
+                    <span class="input-group-btn">
+                        <button class="btn btn-primary" id="add_line_item" type=" button">
+                            <i class="fas fa-plus-circle"></i> &nbsp;Add</button>
+                    </span>
+                </div>
+            </div>
+            <!-- <div class="form-group col-md-3">
+                    <label for="led_name">Amount</label>
+                    <input type="text" class="form-control" id="vou_amt" placeholder="Amount">
+                </div>
+
+                <form class="form-group col-md-2">
+                    <button class="btn btn-success btn-space btn-top-mrg" id="add_line_item" type="button">Save</button>
+                </form> -->
+        </div>
+
+
+        <table id="entry_table" class="display compact hover" style="width:100%">
+
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Ledger Name</th>
+                    <th>Dr/Cr</th>
+                    <th>Amount</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+        <br>
+        <br>
+
+
+
+        <!-- </div> -->
+
+
+
+    </div>
+    <div class="form-group col-md-12">
+        <label for="vou_desc">Description</label>
+        <textarea class="form-control" id="vou_desc" rows="3"></textarea>
+    </div>
+    <nav class="navbar fixed-bottom navbar-light bg-light">
+        <form class="form-inline my-2 my-lg-0">
+            <button class="btn btn-success my-2 my-sm-0 btn-space" id="save_voucher" type="button">
+                <i class="fas fa-save"></i> &nbsp;Save</button>
+            <button class="btn btn-danger my-2 my-sm-0 btn-space" type="button"> <i class="fas fa-trash-alt"></i>
+                &nbsp;Delete</button>
+            <button class="btn btn-info my-2 my-sm-0 btn-space" type="button" id="clear_all">Clear</button>
+
+        </form>
+    </nav>
+
+    <script>
+        // You can also require other files to run in this process
+        require('../../../renderer.js')
+    </script>
+
+
+    <script>
+        if (typeof module === 'object') {
+            window.module = module;
+            module = undefined;
+        }
+    </script>
+    <script src="../../js/popper.min.js"></script>
+    <script src="../../js/jquery.min.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
+    <script src="../../js/select2.min.js"></script>
+    <script src="../../js/bootstrap-datepicker.min.js"></script>
+    <script src="../../js/jquery.dataTables.min.js"></script>
+    <script src="../../js/fa/all.min.js"></script>
+    <script src="../../js/moment.min.js"></script>
+    <script src="manage_vouchers.js"></script>
+
+    <script>
+        if (window.module) module = window.module;
+    </script>
+
+    <!-- <script src="../../../server/db_ops.js"></script> -->
+
+</body>
+
+</html>

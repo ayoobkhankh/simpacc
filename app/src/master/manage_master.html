@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Manage Master</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../css/bootstrap.css">
+    <link rel="stylesheet" href="../../css/select2.css">
+    <link rel="stylesheet" href="../../css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="../../css/fa/all.min.css">
+    <link rel="stylesheet" href="../../css/bootstrap-datepicker.min.css">
+    <link rel="stylesheet" href="../../css/css-loader.css">
+
+</head>
+
+<body>
+
+    <div class="container col-md-12">
+
+
+
+        <form id="save_master_form" data-parsley-validate="" data-parsley-errors-container="#err-test">
+
+
+            <br>
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label for="coupon">Business Name</label>
+                    <!-- should behave like the other non-inlined form fields -->
+                    <div class="input-group">
+                        <span class="input-group-btn">
+                            <button class="btn btn-primary" disabled type=" button">
+                                <i class="fas fa-store"></i></button>
+                        </span>
+                        <input type="text" class="form-control" required id="bus_name" placeholder="Business Name" />
+
+                    </div>
+
+                </div>
+                <div class="form-group col-md-12">
+                    <label for="coupon">Address Line 1</Address></label>
+                    <!-- should behave like the other non-inlined form fields -->
+                    <div class="input-group">
+                        <span class="input-group-btn">
+                            <button class="btn btn-primary" disabled type=" button">
+                                <i class="fas fa-map-marker-alt"></i></button>
+                        </span>
+                        <input type="text" class="form-control" id="adr_ln1" placeholder="Address Line 1" />
+
+                    </div>
+
+                </div>
+                <div class="form-group col-md-12">
+                    <label for="coupon">Address Line 2</Address></label>
+                    <!-- should behave like the other non-inlined form fields -->
+                    <div class="input-group">
+                        <span class="input-group-btn">
+                            <button class="btn btn-primary" disabled type=" button">
+                                <i class="fas fa-map-marker-alt"></i></button>
+                        </span>
+                        <input type="text" class="form-control" id="adr_ln2" placeholder="Address Line 2" />
+
+                    </div>
+
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="coupon">Phone</Address></label>
+                    <!-- should behave like the other non-inlined form fields -->
+                    <div class="input-group">
+                        <span class="input-group-btn">
+                            <button class="btn btn-primary" disabled type=" button">
+                                <i class="fas fa-phone"></i></button>
+                        </span>
+                        <input type="text" class="form-control" id="bus_phone" placeholder="Phone" />
+
+                    </div>
+
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="coupon">Email</Address></label>
+                    <!-- should behave like the other non-inlined form fields -->
+                    <div class="input-group">
+                        <span class="input-group-btn">
+                            <button class="btn btn-primary" disabled type=" button">
+                                <i class="fas fa-envelope"></i></button>
+                        </span>
+                        <input type="text" class="form-control" id="bus_email" placeholder="Email" />
+
+                    </div>
+
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="coupon">Accounting Start Date</Address></label>
+                    <!-- should behave like the other non-inlined form fields -->
+                    <div class="input-group">
+                        <span class="input-group-btn">
+                            <button class="btn btn-primary" disabled type=" button">
+                                <i class="fas fa-calendar-alt"></i></button>
+                        </span>
+                        <input type="text" data-provide="datepicker" class="form-control" id="acc_start_date"
+                            placeholder="Accounting Start Date" />
+
+                    </div>
+
+                </div>
+
+                <!-- <div class="form-row">
+                    <div class="form-group col-md-12">
+                        <label for="SelectAccGroup">Account Group</label>
+                        <select class="js-example-basic-single form-control" id="SelectAccGroup">
+
+                        </select>
+                    </div>
+                </div> -->
+                <!--
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="inputCity">City</label>
+                            <input type="text" class="form-control" id="inputCity">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="inputState">State</label>
+                            <select id="inputState" class="form-control">
+                                <option selected>Choose...</option>
+                                <option>...</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label for="inputZip">Zip</label>
+                            <input type="text" class="form-control" id="inputZip">
+                        </div>
+                    </div> -->
+                <!-- <div class="form-group">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="gridCheck">
+                            <label class="form-check-label" for="gridCheck">
+                                Check me out
+                            </label>
+                        </div>
+                    </div> -->
+
+                <!-- <a href="#" id="show_select_ledger">Click here</a> -->
+
+        </form>
+
+
+
+    </div>
+
+    <div id="loading" class="loader loader-default"></div>
+
+    <div id="err-test"></div>
+
+    <nav class="navbar fixed-bottom navbar-light bg-light">
+        <form class="form-inline my-2 my-lg-0">
+            <button class="btn btn-success my-2 my-sm-0 btn-space" id="save_master" type="button">
+                <i class="fas fa-save"></i> &nbsp;Save</button>
+            <button class="btn btn-danger my-2 my-sm-0 btn-space" type="button"> <i class="fas fa-trash-alt"></i>
+                &nbsp;Delete</button>
+            <button class="btn btn-info my-2 my-sm-0 btn-space" type="button" id="clear_all">Clear</button>
+
+        </form>
+    </nav>
+
+    <script>
+        // You can also require other files to run in this process
+        require('../../../renderer.js')
+    </script>
+
+
+    <script>
+        if (typeof module === 'object') {
+            window.module = module;
+            module = undefined;
+        }
+    </script>
+    <script src="../../js/popper.min.js"></script>
+    <script src="../../js/jquery.min.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
+    <script src="../../js/select2.min.js"></script>
+    <script src="../../js/fa/all.min.js"></script>
+    <script src="../../js/parsley.min.js"></script>
+    <script src="../../js/moment.min.js"></script>
+    <script src="../../js/bootstrap-datepicker.min.js"></script>
+
+
+    <script src="manage_master.js"></script>
+
+    <script>
+        if (window.module) module = window.module;
+    </script>
+
+</body>
+
+</html>

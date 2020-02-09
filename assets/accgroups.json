@@ -1,0 +1,140 @@
+﻿[
+	{
+		"GroupID": 1,
+		"SubgroupID": 100,
+		"SubgroupName": "Capital Account",
+		"GroupName": "Capital"
+	},
+	{
+		"GroupID": 2,
+		"SubgroupID": 200,
+		"SubgroupName": "Loans",
+		"GroupName": "Liabilities"
+	},
+	{
+		"GroupID": 2,
+		"SubgroupID": 201,
+		"SubgroupName": "Provisions",
+		"GroupName": "Liabilities"
+	},
+	{
+		"GroupID": 2,
+		"SubgroupID": 202,
+		"SubgroupName": "Duties & Taxes",
+		"GroupName": "Liabilities"
+	},
+	{
+		"GroupID": 2,
+		"SubgroupID": 203,
+		"SubgroupName": "Sundry Creditors",
+		"GroupName": "Liabilities"
+	},
+	{
+		"GroupID": 2,
+		"SubgroupID": 204,
+		"SubgroupName": "Current Liabilities",
+		"GroupName": "Liabilities"
+	},
+	{
+		"GroupID": 2,
+		"SubgroupID": 205,
+		"SubgroupName": "Bank OD A/c",
+		"GroupName": "Liabilities"
+	},
+	{
+		"GroupID": 3,
+		"SubgroupID": 300,
+		"SubgroupName": "Fixed Assets",
+		"GroupName": "Assets"
+	},
+	{
+		"GroupID": 3,
+		"SubgroupID": 301,
+		"SubgroupName": "Investments",
+		"GroupName": "Assets"
+	},
+	{
+		"GroupID": 3,
+		"SubgroupID": 302,
+		"SubgroupName": "Deposits (Asset)",
+		"GroupName": "Assets"
+	},
+	{
+		"GroupID": 3,
+		"SubgroupID": 303,
+		"SubgroupName": "Loans & Advances (Asset)",
+		"GroupName": "Assets"
+	},
+	{
+		"GroupID": 3,
+		"SubgroupID": 304,
+		"SubgroupName": "Stock-in-hand",
+		"GroupName": "Assets"
+	},
+	{
+		"GroupID": 3,
+		"SubgroupID": 305,
+		"SubgroupName": "Current Assets",
+		"GroupName": "Assets"
+	},
+	{
+		"GroupID": 3,
+		"SubgroupID": 306,
+		"SubgroupName": "Sundry Debtors",
+		"GroupName": "Assets"
+	},
+	{
+		"GroupID": 3,
+		"SubgroupID": 307,
+		"SubgroupName": "Suspense A/c",
+		"GroupName": "Assets"
+	},
+	{
+		"GroupID": 3,
+		"SubgroupID": 308,
+		"SubgroupName": "Bank Accounts",
+		"GroupName": "Assets"
+	},
+	{
+		"GroupID": 3,
+		"SubgroupID": 309,
+		"SubgroupName": "Cash-in-hand",
+		"GroupName": "Assets"
+	},
+	{
+		"GroupID": 4,
+		"SubgroupID": 400,
+		"SubgroupName": "Sales Accounts",
+		"GroupName": "Incomes"
+	},
+	{
+		"GroupID": 4,
+		"SubgroupID": 401,
+		"SubgroupName": "Direct Incomes",
+		"GroupName": "Incomes"
+	},
+	{
+		"GroupID": 4,
+		"SubgroupID": 402,
+		"SubgroupName": "Indirect Incomes",
+		"GroupName": "Incomes"
+	},
+	{
+		"GroupID": 5,
+		"SubgroupID": 500,
+		"SubgroupName": "Purchase Accounts",
+		"GroupName": "Expenses"
+	},
+	{
+		"GroupID": 5,
+		"SubgroupID": 501,
+		"SubgroupName": "Direct Expenses",
+		"GroupName": "Expenses"
+	},
+	{
+		"GroupID": 5,
+		"SubgroupID": 502,
+		"SubgroupName": "Indirect Expenses",
+		"GroupName": "Expenses"
+	}
+]

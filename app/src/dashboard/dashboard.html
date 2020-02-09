@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../css/bootstrap.css">
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <ul>
+                    <li>
+                        <a href="#" id="show_manage_ledgers">Ledgers</a>
+                    </li>
+                    <li>
+                        <a href="#" id="show_manage_vouchers">Vouchers</a>
+                    </li>
+                    <li>
+                        <a href="#" id="show_view_ledger">View Ledger</a>
+                    </li>
+                    <li>
+                        <a href="#" id="show_manage_master">Manage Master</a>
+                    </li>
+                    <li>
+                        <a href="#" id="show_day_book">Day Book</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- <script src="" async defer></script> -->
+    <script>
+        // You can also require other files to run in this process
+        require('../../../renderer.js')
+    </script>
+
+
+    <script>
+        if (typeof module === 'object') {
+            window.module = module;
+            module = undefined;
+        }
+    </script>
+
+    <script src="../../js/jquery.min.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
+    <script src="dashboard.js"></script>
+
+    <script>
+        if (window.module) module = window.module;
+    </script>
+</body>
+
+</html>

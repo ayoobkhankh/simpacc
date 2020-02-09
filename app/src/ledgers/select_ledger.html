@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Select Ledger</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../css/bootstrap.css">
+    <link rel="stylesheet" href="../../css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="../../css/fa/all.min.css">
+
+    <style>
+        .led_id_link {
+            text-align: center;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <h6 class="card-header">Day Book <a href="#" data-toggle="popover" data-trigger="focus" title="Popover title"
+            data-content="And here's some amazing content. It's very engaging. Right?">
+            <i class="fas fa-question-circle fa-xs"></i> </a>
+    </h6>
+    <br>
+    <!-- <div class="card-header">
+
+        <h6>Select Ledger</h6>
+    </div>
+    <br> -->
+    <div class="container col-md-12">
+        <div class="form-row">
+
+            <div class="form-group col-md-6">
+                <!-- <label for="coupon">Search</label> -->
+                <!-- should behave like the other non-inlined form fields -->
+                <div class="input-group">
+                    <input type="text" class="form-control" id="search_crit" placeholder="Enter the key word" />
+                    <span class="input-group-btn">
+                        <button class="btn btn-primary" id="search_ledger" type=" button">
+                            <i class="fas fa-search"></i> &nbsp; Search</button>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+
+        <table id="led_list_table" class="display compact hover" style="width:100%">
+
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Ledger Name</th>
+                    <th>Ledger Sub-Group</th>
+                    <th>Ledger Group</th>
+                </tr>
+            </thead>
+
+        </table>
+    </div>
+
+    <script>
+        // You can also require other files to run in this process
+        require('../../../renderer.js')
+    </script>
+
+
+    <script>
+        if (typeof module === 'object') {
+            window.module = module;
+            module = undefined;
+        }
+    </script>
+    <script src="../../js/popper.min.js"></script>
+    <script src="../../js/jquery.min.js"></script>
+    <script src="../../js/jquery.dataTables.min.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
+    <script src="../../js/fa/all.min.js"></script>
+    <script src="select_ledger.js"></script>
+
+    <script>
+        if (window.module) module = window.module;
+    </script>
+</body>
+
+</html>

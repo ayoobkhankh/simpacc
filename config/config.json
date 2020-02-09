@@ -1,0 +1,7 @@
+{
+  "production": {
+    "dialect": "sqlite",
+    "storage": "database.db",
+    "operatorsAliases": false
+  }
+}

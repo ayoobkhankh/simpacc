@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Manage Ledgers</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../css/bootstrap.css">
+    <link rel="stylesheet" href="../../css/select2.css">
+    <link rel="stylesheet" href="../../css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="../../css/fa/all.min.css">
+
+
+</head>
+
+<body>
+    <h6 class="card-header">Manage Ledgers <a href="#" data-toggle="popover" data-trigger="focus" title="Popover title"
+            data-content="And here's some amazing content. It's very engaging. Right?">
+            <i class="fas fa-question-circle fa-xs"></i> </a>
+    </h6>
+
+    <div class="container col-md-12">
+
+
+
+        <form>
+            <br>
+
+
+            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                <label class="btn btn-primary active">
+                    <i class="fas fa-plus-circle"></i> &nbsp;
+                    <input type="radio" id="create_new_radio" checked> Create New
+                </label>
+
+                <label class="btn btn-primary">
+                    <i class="fas fa-edit"></i> &nbsp;
+                    <input type="radio" id="edit_radio"> Edit Existing
+                </label>
+            </div>
+            <!-- <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="create_new_radio" id="create_new_radio" checked>
+                    <label class="form-check-label" for="create_new_radio">Create New</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="edit_radio" id="edit_radio">
+                    <label class="form-check-label" for="edit_radio">Edit Existing</label>
+                </div> -->
+            <br>
+            <br>
+            <div class="form-row">
+                <div class="form-group col-md-2 has-feedback">
+                    <label for="ledid">Ledger ID</label>
+                    <input type="text" class="form-control input" id="ledid" placeholder="Ledger ID" readonly>
+                </div>
+                <div class="form-group col-md-10">
+                    <label for="led_name">Ledger Name</label>
+                    <input type="text" class="form-control" id="led_name" placeholder="Ledger Name">
+                </div>
+
+            </div>
+
+            <div class="form-group">
+                <label for="led_desc">Description</label>
+                <input type="text" class="form-control" id="led_desc" placeholder="Description">
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label for="SelectAccGroup">Account Group</label>
+                    <select class="js-example-basic-single form-control" id="SelectAccGroup">
+                        <!-- <optgroup label="Assets">
+                                <option value="volvo">Sundry Debtors</option>
+                                <option value="saab">Saab</option>
+                            </optgroup>
+                            <optgroup label="German Cars">
+                                <option value="mercedes">Mercedes</option>
+                                <option value="audi">Audi</option>
+                            </optgroup> -->
+                    </select>
+                </div>
+            </div>
+            <!--
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="inputCity">City</label>
+                            <input type="text" class="form-control" id="inputCity">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="inputState">State</label>
+                            <select id="inputState" class="form-control">
+                                <option selected>Choose...</option>
+                                <option>...</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label for="inputZip">Zip</label>
+                            <input type="text" class="form-control" id="inputZip">
+                        </div>
+                    </div> -->
+            <!-- <div class="form-group">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="gridCheck">
+                            <label class="form-check-label" for="gridCheck">
+                                Check me out
+                            </label>
+                        </div>
+                    </div> -->
+
+            <!-- <a href="#" id="show_select_ledger">Click here</a> -->
+            <div class="form-row">
+                <div class="form-group col-md-9">
+                    <label for="led_ob">Opening Balance</label>
+                    <input type="text" class="form-control" id="led_ob" disabled placeholder="Opening Balance">
+                </div>
+                <div class="form-group col-md-3 has-feedback">
+                    <label for="led_ob_type">Opening Balance Type</label>
+                    <select class="form-control" id="led_ob_type" disabled>
+                        <option value="Dr">Dr</option>
+                        <option value="Cr">Cr</option>
+
+                    </select> </div>
+            </div>
+        </form>
+
+
+
+    </div>
+    <nav class="navbar fixed-bottom navbar-light bg-light">
+        <form class="form-inline my-2 my-lg-0">
+            <button class="btn btn-success my-2 my-sm-0 btn-space" id="save_ledger" type="button">
+                <i class="fas fa-save"></i> &nbsp;Save</button>
+            <button class="btn btn-danger my-2 my-sm-0 btn-space" type="button">
+                <i class="fas fa-trash-alt"></i> &nbsp;Delete</button>
+            <button class="btn btn-info my-2 my-sm-0 btn-space" type="button" id="clear_all">Clear</button>
+
+        </form>
+    </nav>
+
+    <script>
+        // You can also require other files to run in this process
+        require('../../../renderer.js')
+    </script>
+
+
+    <script>
+        if (typeof module === 'object') {
+            window.module = module;
+            module = undefined;
+        }
+    </script>
+    <script src="../../js/popper.min.js"></script>
+    <script src="../../js/jquery.min.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
+    <script src="../../js/select2.min.js"></script>
+    <script src="../../js/fa/all.min.js"></script>
+
+    <script src="manage_ledgers.js"></script>
+
+    <script>
+        if (window.module) module = window.module;
+    </script>
+
+    <script src="../../../server/db_ops.js"></script>
+
+</body>
+
+</html>
